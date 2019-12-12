@@ -6,8 +6,8 @@ var loginService = require('../services/login');
 
 router.post('/login', (req, res)=>{
     var data = {
-      user_id: req.body.user_id,
-      password: req.body.password
+      user_id: req.body.user_id || req.query.user_id,
+      password: req.body.password || req.query.password
     };
 
     var rules = validationRules.rules.login;
@@ -21,7 +21,8 @@ router.post('/login', (req, res)=>{
                     res.send("err in login");
                 } else {
                     req.session.user_id = data.user_id;
-                    res.redirect('/startPlay');
+                    //res.redirect(301,'/v1/startPlay', {user_id: data.user_id});
+                    res.render('/home/gauravkumar/grv_java/ESP/html/startPlay.ejs', {user_id: data.user_id});
                 }
             });
         }

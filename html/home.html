@@ -3,9 +3,9 @@
 
     </head>
     <body>
-        <form>
-            <input placeholder="user_id" type="user_id" name="UserID" id="user_id" class='input_field'>
-            <input  placeholder="Password" type="password" name="Password" id="field_password" class='input_field'>
+        <form action="/v1/login" method="POST">
+            <input placeholder="user_id" type="user_id" name="user_id" id="user_id" class='input_field'>
+            <input  placeholder="Password" type="password" name="password" id="field_password" class='input_field'>
             <input type="submit" value="Login" id='input_submit' class='input_field'>
         </form>
     </body>
