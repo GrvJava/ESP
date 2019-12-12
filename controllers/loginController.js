@@ -33,4 +33,8 @@ router.post('/login', (req, res)=>{
     });
 });
 
+router.get('/home', (req, res)=>{
+    res.sendFile('/home/gauravkumar/grv_java/ESP/html/home.html');
+});
+
 module.exports = router;
