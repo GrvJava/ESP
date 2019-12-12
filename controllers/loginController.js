@@ -22,7 +22,7 @@ router.post('/login', (req, res)=>{
                 } else {
                     req.session.user_id = data.user_id;
                     //res.redirect(301,'/v1/startPlay', {user_id: data.user_id});
-                    res.render('/home/gauravkumar/grv_java/ESP/html/startPlay.ejs', {user_id: data.user_id});
+                    res.render(process.env.HOME_PATH+'/html/startPlay.ejs', {user_id: data.user_id});
                 }
             });
         }
@@ -35,7 +35,8 @@ router.post('/login', (req, res)=>{
 });
 
 router.get('/home', (req, res)=>{
-    res.sendFile('/home/gauravkumar/grv_java/ESP/html/home.html');
+    console.log(process.env.HOME_PATH+'/html/home.html')
+    res.sendFile(process.env.HOME_PATH+'/html/home.html');
 });
 
 module.exports = router;

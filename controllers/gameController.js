@@ -24,7 +24,7 @@ router.post('/startPlay', (req, res)=>{
                 } else {
                     res.status(200);
                     console.log(response);
-                    res.render('/home/gauravkumar/grv_java/ESP/html/chooseSecondaryImage.ejs', {images: images.images[response.toString()].toString(), user_id: data.first_player});
+                    res.render(process.env.HOME_PATH + '/html/chooseSecondaryImage.ejs', {images: images.images[response.toString()].toString(), user_id: data.first_player});
                     //res.send(images.images[response.toString()].toString());
                 }
             });

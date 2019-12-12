@@ -1,0 +1,9 @@
+<body>
+        <p>Hello,
+                <%= user_id %>
+        </p>
+        <form action="/v1/startPlay" method="POST">
+            <input type="hidden" name="user_id"  value="<%= user_id %>" id="user_id" class='input_field'>
+            <input type="submit" value="startPlay" id='input_submit' class='input_field'>
+        </form>
+</body>

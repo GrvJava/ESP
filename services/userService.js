@@ -2,7 +2,7 @@ const Q = require('q');
 const fs = require('fs');
 
 var getActivePlayers = (callback) => {
-    fs.readFile('/home/gauravkumar/grv_java/ESP/staticfiles/active_players.json', 'utf8', (err, jsonString) => {
+    fs.readFile(process.env.HOME_PATH+'/staticfiles/active_players.json', 'utf8', (err, jsonString) => {
         if (err) {
             callback(err);
         }
@@ -11,7 +11,7 @@ var getActivePlayers = (callback) => {
 };
 
 var updatePlayers = function(jsonString,callback) {
-    fs.writeFile('/home/gauravkumar/grv_java/ESP/staticfiles/active_players.json', jsonString, err => {
+    fs.writeFile(process.env.HOME_PATH+'/staticfiles/active_players.json', jsonString, err => {
         if (err) {
             callback(new Error("Error in writing file"));
         } else {

@@ -27,6 +27,7 @@ console.log("Loading routes");
 app.use('/v1', login);
 app.use('/v1', game);
 
+console.log('setting HOME_PATH : ', process.env.HOME_PATH);
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}`);
