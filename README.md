@@ -11,3 +11,5 @@ Steps to play game :
 3. provide one of the secondary image in input.
 4. you will be able to see active players in "ESP/staticfiles/active_players.json"
 5. Again login with another user and repeat same steps for second user too.
+
+Note : Before starting then game content of "ESP/staticfiles/active_players.json" should be an empty json {}
